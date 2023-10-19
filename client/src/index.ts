@@ -1,16 +1,20 @@
-import * as PIXI from 'pixi.js';
-import * as Matter from 'matter-js';
-import { Howl } from 'howler';
-import Hammer from 'hammerjs';
+import { app } from './engine/init';
+import { startGameLoop } from './engine/gameLoop';
+import { updatePhysics } from './engine/physics';
+import { InputManager } from './engine/inputManager';
+import { Player } from './gameObjects/player';
 
-const app = new PIXI.Application();
-document.body.appendChild(app.view as HTMLCanvasElement);
+const inputManager = new InputManager();
+const player = new Player(inputManager);
 
-const engine = Matter.Engine.create();
-const world = engine.world;
-Matter.Engine.run(engine);
+app.stage.addChild(player.sprite);
 
-app.ticker.add((delta) => {
-  // Game update logic
-  Matter.Engine.update(engine, delta);
-});
+function update() {
+  player.update();
+  updatePhysics();
+}
+
+console.log("Hello World!");
+startGameLoop(update);
+
+

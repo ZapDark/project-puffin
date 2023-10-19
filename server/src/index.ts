@@ -1,17 +1,11 @@
 import express from 'express';
-import http from 'http';
-import { Server } from 'socket.io';
-import { Pool } from 'pg';
+import path from 'path';
 
 const app = express();
-const server = http.createServer(app);
-const io = new Server(server);
-const pool = new Pool({ /* PostgreSQL Config */ });
 
-io.on('connection', (socket) => {
-  // Handle multiplayer events
-});
+// Serve static files from the client/dist directory
+app.use(express.static(path.resolve(__dirname, '../../dist/client')));
 
-server.listen(3000, () => {
-  console.log('Server running on http://localhost:3000');
+app.listen(3000, () => {
+  console.log('Server is running on http://localhost:3000');
 });

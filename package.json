@@ -5,9 +5,9 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "tsc",
-    "start": "node dist/index.js",
-    "dev": "tsc-watch --onSuccess \"node dist/index.js\""
+    "build": "tsc --build && copyfiles \"client/src/index.html\" -u 2 dist/client",
+    "start": "node dist/server/index.js",
+    "dev": "tsc-watch --project server --onSuccess \"node dist/server/index.js\""
   },
   "repository": {
     "type": "git",
@@ -28,10 +28,11 @@
     "@types/passport": "^1.0.14",
     "@types/pg": "^8.10.7",
     "eslint": "^8.51.0",
-    "prettier": "^3.0.3",
     "typescript": "^5.2.2"
   },
   "dependencies": {
+    "@types/css-font-loading-module": "^0.0.10",
+    "copyfiles": "^2.4.1",
     "express": "^4.18.2",
     "gsap": "^3.12.2",
     "hammerjs": "^2.0.8",
