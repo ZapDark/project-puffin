@@ -1,0 +1,23 @@
+# Node modules
+node_modules/
+
+# Build directories
+client/dist/
+server/dist/
+
+# Environment variables
+.env
+
+# Editor folders
+.vscode/
+.idea/
+
+# Operating system generated files
+.DS_Store
+Thumbs.db
+
+# TypeScript error files
+*.ts-*
+
+# Logs
+*.log
