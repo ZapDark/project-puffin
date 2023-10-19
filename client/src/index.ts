@@ -10,11 +10,9 @@ const player = new Player(inputManager);
 app.stage.addChild(player.sprite);
 
 function update() {
-  player.update();
-  updatePhysics();
+    player.update();
+    updatePhysics();
 }
 
-console.log("Hello World!");
+console.log('Hello World!');
 startGameLoop(update);
-
-

@@ -1,17 +1,14 @@
 {
     "compilerOptions": {
-      "target": "ES6",
-      "module": "ESNext",
-      "moduleResolution": "node",
-      "outDir": "../dist/client",
-      "rootDir": "./src",
-      "strict": true,
-      "esModuleInterop": true,
-      "skipLibCheck": true,
-      "forceConsistentCasingInFileNames": true
+        "target": "ES6",
+        "module": "ESNext",
+        "moduleResolution": "node",
+        "outDir": "../dist/client",
+        "rootDir": "./src",
+        "strict": true,
+        "esModuleInterop": true,
+        "skipLibCheck": true,
+        "forceConsistentCasingInFileNames": true
     },
-    "include": [
-      "src/**/*"
-    ]
-  }
-  
+    "include": ["src/**/*"]
+}
