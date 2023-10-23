@@ -14,3 +14,7 @@ const PORT = process.env.PORT || 3001;
 server.listen(PORT, () => {
     console.log(`Server is listening on port ${PORT}`);
 });
+
+app.get('/api/test-connection', (_req, res) => {
+    res.send('Connection to server successful!');
+});

@@ -13,11 +13,22 @@ export default class MainScene extends Phaser.Scene {
     }
 
     create() {
+        this.testConnection();
         this.physics.world.setBounds(0, 0, 800, 600);
         this.player = new Player(this, 400, 300);
     }
 
     update() {
         this.player.update();
+    }
+
+    async testConnection() {
+        try {
+            const response = await fetch('/api/test-connection');
+            const message = await response.text();
+            console.log(message);
+        } catch (error) {
+            console.error('Error testing connection:', error);
+        }
     }
 }
