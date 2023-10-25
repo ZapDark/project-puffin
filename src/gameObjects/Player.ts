@@ -1,4 +1,5 @@
 import Phaser from 'phaser';
+import socket from '../utils/socket';
 
 export default class Player extends Phaser.Physics.Arcade.Sprite {
     constructor(scene: Phaser.Scene, x: number, y: number) {
@@ -27,5 +28,7 @@ export default class Player extends Phaser.Physics.Arcade.Sprite {
         } else if (cursors.down.isDown) {
             this.setVelocityY(200);
         }
+
+        socket.emit('playerMove', { x: this.x, y: this.y });
     }
 }
